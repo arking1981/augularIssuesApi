@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app="augular_issues">
+	<head>
+		<title>Issues in last 7 days</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    	<script src="angular_issues.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="Issues">
+			<h1> There are a totle of <em>{{digests.length}}</em> issues:</h1>
+            <ul ng-repeat="digest in digests">
+                    <h2> Issue: {{$index + 1}} {{digest.title}} </h2>
+                    <p>Raised by: <em>{{digest.user_login}}</em></p>
+                    <p>Assigned to: <em>{{digest.assignee_login}}</em></p>
+                    
+                    <p>{{digest.body}}</p>
+                    
+                    
+            </ul>
+            
+		</div>
+	</body>
+</html>
